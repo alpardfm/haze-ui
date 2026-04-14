@@ -70,6 +70,11 @@ select {
   color: #0f4f49;
 }
 
+.app-header .button {
+  min-height: auto;
+  padding: 8px 12px;
+}
+
 .layout-panel {
   width: min(960px, calc(100% - 32px));
   margin: 48px auto;
@@ -157,6 +162,15 @@ textarea.field-control {
 
 .field-error {
   color: #b42318;
+}
+
+.form-error {
+  margin: 0;
+  border: 1px solid #f2aaa3;
+  border-radius: 8px;
+  padding: 12px;
+  color: #7a271a;
+  background: #fff1f0;
 }
 
 .button {

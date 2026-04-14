@@ -76,16 +76,16 @@ Admin bisa login ke sistem dan masuk ke area private.
 
 ### Tasks
 
-- [ ] buat login page
-- [ ] buat form email dan password
-- [ ] integrasikan ke `POST /auth/login`
-- [ ] handle loading state saat submit
-- [ ] handle error state saat login gagal
-- [ ] simpan token / session hasil login
-- [ ] buat auth guard dasar
-- [ ] redirect ke dashboard setelah login sukses
-- [ ] buat logout flow dasar
-- [ ] buat proteksi route admin
+- [x] buat login page
+- [x] buat form email dan password
+- [x] integrasikan ke `POST /auth/login`
+- [x] handle loading state saat submit
+- [x] handle error state saat login gagal
+- [x] simpan token / session hasil login
+- [x] buat auth guard dasar
+- [x] redirect ke dashboard setelah login sukses
+- [x] buat logout flow dasar
+- [x] buat proteksi route admin
 
 ### Output
 

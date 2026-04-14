@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import { ProtectedRoute } from "../components/auth/ProtectedRoute";
 import { AdminLayout } from "../components/layout/AdminLayout";
 import { AppShell } from "../components/layout/AppShell";
 import { PublicLayout } from "../components/layout/PublicLayout";
@@ -13,7 +14,9 @@ export function App() {
       <Route element={<AppShell />}>
         <Route element={<AdminLayout />}>
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/appointments" element={<AppointmentsPage />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/appointments" element={<AppointmentsPage />} />
+          </Route>
         </Route>
         <Route element={<PublicLayout />}>
           <Route path="/public/schedule" element={<PublicSchedulePage />} />

@@ -5,7 +5,7 @@ export function AdminLayout() {
     <section className="layout-panel" aria-label="Area admin">
       <div className="layout-panel__header">
         <p className="eyebrow">Admin</p>
-        <h2>Appointment</h2>
+        <h2>Area admin</h2>
       </div>
       <Outlet />
     </section>
