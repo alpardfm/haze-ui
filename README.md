@@ -255,7 +255,32 @@ npm run build
 npm audit
 ```
 
-## 11. UX Notes
+## 11. Deployment
+
+Target deploy v1:
+- URL UI: `https://alpardfm.my.id/haze/`
+- API: `https://alpardfm.my.id/api/haze`
+- VPS path: `/var/www/alpardfm.my.id/haze`
+
+Manual deploy dari local:
+
+```bash
+bash scripts/deploy-vps.sh
+```
+
+CI/CD tersedia di `.github/workflows/deploy.yml`.
+
+GitHub secret yang diperlukan:
+
+```text
+VPS_SSH_KEY
+```
+
+Isi `VPS_SSH_KEY` dengan private key deploy yang punya akses SSH ke `alpardfm@103.87.67.209`.
+
+Nginx VPS memakai snippet di `deploy/nginx-haze.conf`.
+
+## 12. UX Notes
 
 Minimal state yang harus diperhatikan:
 
@@ -265,7 +290,7 @@ Minimal state yang harus diperhatikan:
 - disabled submit state saat form diproses
 - confirmation dasar saat cancel appointment
 
-## 12. Non Goals
+## 13. Non Goals
 
 Hal-hal berikut memang tidak dibangun di v1 frontend:
 
@@ -277,7 +302,7 @@ Hal-hal berikut memang tidak dibangun di v1 frontend:
 - analytics dashboard besar
 - multi admin scheduler
 
-## 13. Development Principle
+## 14. Development Principle
 
 Saat mengembangkan `haze-ui`:
 
@@ -287,7 +312,7 @@ Saat mengembangkan `haze-ui`:
 - utamakan implementasi yang sederhana, bersih, dan stabil
 - jaga agar hasil tetap mudah dibaca dan mudah dilanjutkan AI agent
 
-## 14. Summary
+## 15. Summary
 
 `haze-ui` adalah frontend untuk sistem jadwal admin + reminder yang fokus pada dua hal utama:
 

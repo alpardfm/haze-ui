@@ -5,9 +5,11 @@ import { App } from "./app/App";
 import { AuthProvider } from "./store/auth";
 import "./styles/global.css";
 
+const basename = import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL;
+
 createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <AuthProvider>
         <App />
       </AuthProvider>
