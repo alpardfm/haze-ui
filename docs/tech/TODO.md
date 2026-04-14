@@ -209,14 +209,14 @@ Admin bisa membatalkan appointment dari UI.
 
 ### Tasks
 
-- [ ] buat tombol cancel appointment
-- [ ] buat confirmation dialog sederhana
-- [ ] integrasikan ke `PATCH /appointments/:id/cancel`
-- [ ] handle loading state saat cancel
-- [ ] handle success state
-- [ ] handle error state
-- [ ] update list/detail setelah cancel sukses
-- [ ] pastikan status `cancelled` tampil jelas di UI
+- [x] buat tombol cancel appointment
+- [x] buat confirmation dialog sederhana
+- [x] integrasikan ke `PATCH /appointments/:id/cancel`
+- [x] handle loading state saat cancel
+- [x] handle success state
+- [x] handle error state
+- [x] update list/detail setelah cancel sukses
+- [x] pastikan status `cancelled` tampil jelas di UI
 
 ### Output
 

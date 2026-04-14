@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Button } from "../../components/ui/Button";
+import { CancelAppointmentButton } from "../../components/appointment/CancelAppointmentButton";
 import { StateView } from "../../components/ui/StateView";
 import { StatusBadge } from "../../components/ui/StatusBadge";
 import { getAppointment } from "../../services/appointments";
@@ -75,14 +75,23 @@ export function AppointmentDetailPage() {
     );
   }
 
-  return <AppointmentDetail appointment={appointment} />;
+  return (
+    <AppointmentDetail
+      appointment={appointment}
+      onAppointmentUpdated={setAppointment}
+    />
+  );
 }
 
 type AppointmentDetailProps = {
   appointment: Appointment;
+  onAppointmentUpdated: (appointment: Appointment) => void;
 };
 
-function AppointmentDetail({ appointment }: AppointmentDetailProps) {
+function AppointmentDetail({
+  appointment,
+  onAppointmentUpdated,
+}: AppointmentDetailProps) {
   return (
     <div className="stack">
       <div className="toolbar">
@@ -97,13 +106,10 @@ function AppointmentDetail({ appointment }: AppointmentDetailProps) {
           >
             Edit
           </Link>
-          <Button
-            disabled
-            title="Cancel appointment dibangun di Phase 7"
-            variant="danger"
-          >
-            Cancel
-          </Button>
+          <CancelAppointmentButton
+            appointment={appointment}
+            onCancelled={onAppointmentUpdated}
+          />
         </div>
       </div>
 
@@ -167,6 +173,14 @@ function AppointmentDetail({ appointment }: AppointmentDetailProps) {
           <DetailItem
             label="Diubah"
             value={appointment.updated_at ? formatDateTime(appointment.updated_at) : "-"}
+          />
+          <DetailItem
+            label="Dibatalkan"
+            value={
+              appointment.cancelled_at
+                ? formatDateTime(appointment.cancelled_at)
+                : "-"
+            }
           />
         </div>
       </section>

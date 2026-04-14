@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { CancelAppointmentButton } from "../../components/appointment/CancelAppointmentButton";
 import { Button } from "../../components/ui/Button";
 import { FormField } from "../../components/ui/FormField";
 import { Input } from "../../components/ui/Input";
@@ -116,7 +117,16 @@ export function AppointmentsPage() {
           description="Appointment akan tampil di sini setelah tersedia."
         />
       ) : (
-        <AppointmentTable appointments={appointments} />
+        <AppointmentTable
+          appointments={appointments}
+          onAppointmentUpdated={(updatedAppointment) => {
+            setAppointments((current) =>
+              current.map((appointment) =>
+                appointment.id === updatedAppointment.id ? updatedAppointment : appointment,
+              ),
+            );
+          }}
+        />
       )}
     </div>
   );
@@ -124,9 +134,13 @@ export function AppointmentsPage() {
 
 type AppointmentTableProps = {
   appointments: Appointment[];
+  onAppointmentUpdated: (appointment: Appointment) => void;
 };
 
-function AppointmentTable({ appointments }: AppointmentTableProps) {
+function AppointmentTable({
+  appointments,
+  onAppointmentUpdated,
+}: AppointmentTableProps) {
   return (
     <div className="table-wrap">
       <table className="data-table">
@@ -170,13 +184,10 @@ function AppointmentTable({ appointments }: AppointmentTableProps) {
                   >
                     Edit
                   </Link>
-                  <Button
-                    disabled
-                    title="Cancel appointment dibangun di Phase 7"
-                    variant="danger"
-                  >
-                    Cancel
-                  </Button>
+                  <CancelAppointmentButton
+                    appointment={appointment}
+                    onCancelled={onAppointmentUpdated}
+                  />
                 </div>
               </td>
             </tr>

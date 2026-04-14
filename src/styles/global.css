@@ -357,6 +357,7 @@ textarea.field-control {
 
 .table-actions {
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -364,6 +365,18 @@ textarea.field-control {
 .table-actions .button {
   min-height: 34px;
   padding: 6px 10px;
+}
+
+.inline-action {
+  display: inline-grid;
+  gap: 6px;
+}
+
+.inline-error {
+  max-width: 220px;
+  color: #b42318;
+  font-size: 0.86rem;
+  line-height: 1.4;
 }
 
 .table-note {
