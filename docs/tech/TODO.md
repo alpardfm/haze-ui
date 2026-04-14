@@ -185,15 +185,15 @@ Admin bisa mengubah appointment yang sudah ada.
 
 ### Tasks
 
-- [ ] buat halaman edit appointment
-- [ ] load data existing appointment
-- [ ] prefill form edit
-- [ ] integrasikan ke `PUT /appointments/:id`
-- [ ] handle loading submit state
-- [ ] handle error response
-- [ ] redirect kembali ke detail / list setelah sukses
-- [ ] jaga field tetap sesuai boundary v1
-- [ ] jangan buat custom duration field
+- [x] buat halaman edit appointment
+- [x] load data existing appointment
+- [x] prefill form edit
+- [x] integrasikan ke `PUT /appointments/:id`
+- [x] handle loading submit state
+- [x] handle error response
+- [x] redirect kembali ke detail / list setelah sukses
+- [x] jaga field tetap sesuai boundary v1
+- [x] jangan buat custom duration field
 
 ### Output
 

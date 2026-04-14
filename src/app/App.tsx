@@ -6,6 +6,7 @@ import { PublicLayout } from "../components/layout/PublicLayout";
 import { AppointmentComingSoonPage } from "../pages/appointments/AppointmentComingSoonPage";
 import { AppointmentCreatePage } from "../pages/appointments/AppointmentCreatePage";
 import { AppointmentDetailPage } from "../pages/appointments/AppointmentDetailPage";
+import { AppointmentEditPage } from "../pages/appointments/AppointmentEditPage";
 import { AppointmentsPage } from "../pages/appointments/AppointmentsPage";
 import { LoginPage } from "../pages/login/LoginPage";
 import { PublicSchedulePage } from "../pages/public-schedule/PublicSchedulePage";
@@ -29,12 +30,7 @@ export function App() {
             />
             <Route
               path="/appointments/:id/edit"
-              element={
-                <AppointmentComingSoonPage
-                  title="Edit appointment dibangun di Phase 6"
-                  description="Dashboard sudah menyiapkan jalur ke halaman edit."
-                />
-              }
+              element={<AppointmentEditPage />}
             />
           </Route>
         </Route>
