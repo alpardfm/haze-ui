@@ -257,14 +257,14 @@ Merapikan pengalaman penggunaan agar frontend lebih nyaman dipakai.
 
 ### Tasks
 
-- [ ] rapikan spacing dan hierarchy UI
-- [ ] rapikan feedback loading / error / empty
-- [ ] tambahkan disabled state pada submit button
-- [ ] rapikan badge status
-- [ ] tambahkan toast / feedback success sederhana jika perlu
-- [ ] pastikan redirect flow tidak membingungkan
-- [ ] rapikan mobile responsiveness dasar
-- [ ] cek konsistensi copywriting UI
+- [x] rapikan spacing dan hierarchy UI
+- [x] rapikan feedback loading / error / empty
+- [x] tambahkan disabled state pada submit button
+- [x] rapikan badge status
+- [x] tambahkan toast / feedback success sederhana jika perlu
+- [x] pastikan redirect flow tidak membingungkan
+- [x] rapikan mobile responsiveness dasar
+- [x] cek konsistensi copywriting UI
 
 ### Output
 

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { CancelAppointmentButton } from "../../components/appointment/CancelAppointmentButton";
 import { StateView } from "../../components/ui/StateView";
 import { StatusBadge } from "../../components/ui/StatusBadge";
@@ -10,6 +10,7 @@ import { formatDateTime, formatTimeRange } from "../../utils/dateTime";
 
 export function AppointmentDetailPage() {
   const { id } = useParams();
+  const location = useLocation();
   const { token } = useAuth();
   const [appointment, setAppointment] = useState<Appointment | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -78,6 +79,7 @@ export function AppointmentDetailPage() {
   return (
     <AppointmentDetail
       appointment={appointment}
+      notice={readNotice(location.state)}
       onAppointmentUpdated={setAppointment}
     />
   );
@@ -85,11 +87,13 @@ export function AppointmentDetailPage() {
 
 type AppointmentDetailProps = {
   appointment: Appointment;
+  notice: string | null;
   onAppointmentUpdated: (appointment: Appointment) => void;
 };
 
 function AppointmentDetail({
   appointment,
+  notice,
   onAppointmentUpdated,
 }: AppointmentDetailProps) {
   return (
@@ -112,6 +116,8 @@ function AppointmentDetail({
           />
         </div>
       </div>
+
+      {notice ? <div className="notice" role="status">{notice}</div> : null}
 
       <section className="detail-panel" aria-label="Data utama appointment">
         <div className="detail-panel__title">
@@ -186,6 +192,19 @@ function AppointmentDetail({
       </section>
     </div>
   );
+}
+
+function readNotice(state: unknown) {
+  if (
+    state &&
+    typeof state === "object" &&
+    "notice" in state &&
+    typeof state.notice === "string"
+  ) {
+    return state.notice;
+  }
+
+  return null;
 }
 
 type DetailItemProps = {

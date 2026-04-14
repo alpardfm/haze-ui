@@ -29,6 +29,11 @@ select {
   font: inherit;
 }
 
+:focus-visible {
+  outline: 3px solid #bde8dc;
+  outline-offset: 2px;
+}
+
 .app-shell {
   min-height: 100vh;
 }
@@ -76,8 +81,8 @@ select {
 }
 
 .layout-panel {
-  width: min(960px, calc(100% - 32px));
-  margin: 48px auto;
+  width: min(1040px, calc(100% - 32px));
+  margin: clamp(28px, 5vw, 56px) auto;
 }
 
 .layout-panel p {
@@ -213,6 +218,11 @@ textarea.field-control {
   letter-spacing: 0;
   cursor: pointer;
   text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    opacity 160ms ease;
 }
 
 .fit-content {
@@ -222,6 +232,10 @@ textarea.field-control {
 .button:disabled {
   cursor: not-allowed;
   opacity: 0.65;
+}
+
+.button:not(:disabled):hover {
+  filter: brightness(0.96);
 }
 
 .button--primary {
@@ -260,6 +274,10 @@ textarea.field-control {
   color: #55665d;
 }
 
+.state-view__action {
+  margin-top: 14px;
+}
+
 .state-view--loading {
   border-color: #9cc9be;
   background: #eef8f4;
@@ -268,6 +286,15 @@ textarea.field-control {
 .state-view--error {
   border-color: #f2aaa3;
   background: #fff1f0;
+}
+
+.notice {
+  border: 1px solid #9bd4ad;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #1f4d2f;
+  background: #edf8ef;
+  font-weight: 700;
 }
 
 .status-badge {
@@ -347,6 +374,10 @@ textarea.field-control {
 
 .data-table tbody tr:last-child td {
   border-bottom: 0;
+}
+
+.data-table tbody tr:hover {
+  background: #fbfcf8;
 }
 
 .data-table td span {
@@ -500,6 +531,12 @@ textarea.field-control {
   .toolbar {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .toolbar .button,
+  .form-actions .button,
+  .filter-bar__action .button {
+    width: 100%;
   }
 
   .filter-bar {

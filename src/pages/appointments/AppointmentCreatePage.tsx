@@ -56,7 +56,10 @@ export function AppointmentCreatePage() {
 
     try {
       await createAppointment(toAppointmentPayload(form), token);
-      navigate("/appointments", { replace: true });
+      navigate("/appointments", {
+        replace: true,
+        state: { notice: "Appointment berhasil dibuat" },
+      });
     } catch (caughtError) {
       const message =
         caughtError instanceof Error ? caughtError.message : "Gagal membuat appointment";

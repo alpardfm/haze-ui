@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CancelAppointmentButton } from "../../components/appointment/CancelAppointmentButton";
 import { Button } from "../../components/ui/Button";
 import { FormField } from "../../components/ui/FormField";
@@ -18,11 +18,13 @@ import { formatDate, formatTimeRange } from "../../utils/dateTime";
 
 export function AppointmentsPage() {
   const { token } = useAuth();
+  const location = useLocation();
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [date, setDate] = useState("");
   const [status, setStatus] = useState<AppointmentStatus | "">("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const notice = readNotice(location.state);
 
   const fetchAppointments = useCallback(async () => {
     if (!token) {
@@ -63,6 +65,8 @@ export function AppointmentsPage() {
           Tambah appointment
         </Link>
       </div>
+
+      {notice ? <div className="notice" role="status">{notice}</div> : null}
 
       <form className="filter-bar" onSubmit={(event) => event.preventDefault()}>
         <FormField label="Tanggal" htmlFor="appointment-date">
@@ -110,6 +114,11 @@ export function AppointmentsPage() {
           title="Gagal memuat appointment"
           description={error}
           variant="error"
+          action={
+            <Button onClick={() => void fetchAppointments()} variant="secondary">
+              Coba lagi
+            </Button>
+          }
         />
       ) : appointments.length === 0 ? (
         <StateView
@@ -130,6 +139,19 @@ export function AppointmentsPage() {
       )}
     </div>
   );
+}
+
+function readNotice(state: unknown) {
+  if (
+    state &&
+    typeof state === "object" &&
+    "notice" in state &&
+    typeof state.notice === "string"
+  ) {
+    return state.notice;
+  }
+
+  return null;
 }
 
 type AppointmentTableProps = {

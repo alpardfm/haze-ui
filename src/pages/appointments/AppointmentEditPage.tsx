@@ -98,7 +98,10 @@ export function AppointmentEditPage() {
 
     try {
       await updateAppointment(appointmentId, toAppointmentPayload(form), token);
-      navigate(`/appointments/${appointmentId}`, { replace: true });
+      navigate(`/appointments/${appointmentId}`, {
+        replace: true,
+        state: { notice: "Appointment berhasil diubah" },
+      });
     } catch (caughtError) {
       const message =
         caughtError instanceof Error ? caughtError.message : "Gagal mengubah appointment";
