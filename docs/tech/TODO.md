@@ -281,16 +281,16 @@ Menyiapkan frontend agar lebih stabil dan enak dilanjutkan.
 
 ### Tasks
 
-- [ ] rapikan struktur folder final
-- [ ] rapikan service layer API
-- [ ] rapikan type/interface
-- [ ] hapus komponen/logic yang tidak dipakai
-- [ ] review naming consistency
-- [ ] cek ulang auth flow
-- [ ] cek ulang public checker flow
-- [ ] sinkronkan README, RULE, dan TODO
-- [ ] tambahkan catatan setup local
-- [ ] tambahkan contoh `.env.example`
+- [x] rapikan struktur folder final
+- [x] rapikan service layer API
+- [x] rapikan type/interface
+- [x] hapus komponen/logic yang tidak dipakai
+- [x] review naming consistency
+- [x] cek ulang auth flow
+- [x] cek ulang public checker flow
+- [x] sinkronkan README, RULE, dan TODO
+- [x] tambahkan catatan setup local
+- [x] tambahkan contoh `.env.example`
 
 ### Output
 
@@ -321,16 +321,16 @@ Urutan implementasi yang disarankan:
 
 Frontend v1 dianggap cukup ketika:
 
-- [ ] admin bisa login
-- [ ] admin bisa melihat list appointment
-- [ ] admin bisa membuat appointment
-- [ ] admin bisa melihat detail appointment
-- [ ] admin bisa mengedit appointment
-- [ ] admin bisa cancel appointment
-- [ ] public checker per tanggal berjalan
-- [ ] loading / error / empty state dasar sudah ada
-- [ ] auth guard dasar berjalan
-- [ ] UI tetap konsisten dengan backend scope v1
+- [x] admin bisa login
+- [x] admin bisa melihat list appointment
+- [x] admin bisa membuat appointment
+- [x] admin bisa melihat detail appointment
+- [x] admin bisa mengedit appointment
+- [x] admin bisa cancel appointment
+- [x] public checker per tanggal berjalan
+- [x] loading / error / empty state dasar sudah ada
+- [x] auth guard dasar berjalan
+- [x] UI tetap konsisten dengan backend scope v1
 
 ---
 

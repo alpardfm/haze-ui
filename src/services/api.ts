@@ -1,7 +1,8 @@
 import type { ApiEnvelope } from "../types/api";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL ?? "https://alpardfm.my.id/api/haze";
+const API_BASE_URL = (
+  import.meta.env.VITE_API_BASE_URL ?? "https://alpardfm.my.id/api/haze"
+).replace(/\/$/, "");
 
 type RequestOptions = Omit<RequestInit, "body"> & {
   body?: unknown;
@@ -53,6 +54,14 @@ export async function apiRequest<T>(
 
   if (!payload) {
     throw new ApiError("Response API kosong", response.status, payload);
+  }
+
+  if (payload.success === false) {
+    throw new ApiError(
+      payload.message || "Request gagal diproses",
+      response.status,
+      payload,
+    );
   }
 
   return payload;

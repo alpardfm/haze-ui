@@ -3,7 +3,6 @@ import { ProtectedRoute } from "../components/auth/ProtectedRoute";
 import { AdminLayout } from "../components/layout/AdminLayout";
 import { AppShell } from "../components/layout/AppShell";
 import { PublicLayout } from "../components/layout/PublicLayout";
-import { AppointmentComingSoonPage } from "../pages/appointments/AppointmentComingSoonPage";
 import { AppointmentCreatePage } from "../pages/appointments/AppointmentCreatePage";
 import { AppointmentDetailPage } from "../pages/appointments/AppointmentDetailPage";
 import { AppointmentEditPage } from "../pages/appointments/AppointmentEditPage";
