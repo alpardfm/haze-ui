@@ -20,17 +20,17 @@ Membuat pondasi project frontend yang siap dikembangkan.
 
 ### Tasks
 
-- [ ] tentukan stack final frontend
-- [ ] setup project structure
-- [ ] setup routing dasar
-- [ ] setup global layout
-- [ ] setup environment variable untuk API base URL
-- [ ] setup API client / fetch wrapper sederhana
-- [ ] setup folder structure per domain
-- [ ] setup utility dasar
-- [ ] setup styling / UI foundation
-- [ ] setup state management ringan jika memang perlu
-- [ ] setup error boundary dasar jika dibutuhkan
+- [x] tentukan stack final frontend: React + Vite + TypeScript
+- [x] setup project structure
+- [x] setup routing dasar
+- [x] setup global layout
+- [x] setup environment variable untuk API base URL
+- [x] setup API client / fetch wrapper sederhana
+- [x] setup folder structure per domain
+- [x] setup utility dasar
+- [x] setup styling / UI foundation
+- [x] setup state management ringan jika memang perlu: belum diperlukan untuk Phase 0
+- [x] setup error boundary dasar jika dibutuhkan: belum diperlukan untuk Phase 0
 
 ### Output
 
