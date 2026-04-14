@@ -177,47 +177,44 @@ Frontend wajib menjaga aturan berikut:
   - `done`
   - `cancelled`
 
-## 7. Suggested Frontend Structure
+## 7. Frontend Structure
 
 ```bash
 src/
 ├── app/
+├── components/
+│   ├── appointment/
+│   ├── auth/
+│   ├── layout/
+│   └── ui/
+├── constants/
 ├── pages/
 │   ├── login/
 │   ├── appointments/
-│   ├── appointments-create/
-│   ├── appointments-edit/
-│   ├── appointments-detail/
 │   └── public-schedule/
-├── components/
-│   ├── ui/
-│   ├── forms/
-│   ├── appointment/
-│   └── layout/
 ├── services/
 │   ├── api.ts
 │   ├── auth.ts
 │   ├── appointments.ts
-│   └── public-schedule.ts
-├── hooks/
+│   └── publicSchedule.ts
 ├── store/
 ├── types/
 ├── utils/
-└── constants/
+└── styles/
 ```
 
-Struktur final boleh menyesuaikan framework, tapi business flow dan boundary v1 harus tetap sama.
+Struktur final mengikuti flow v1 dan tetap menjaga boundary antara admin area dan public checker.
 
-## 8. Suggested Tech Direction
+## 8. Tech Direction
 
-Frontend v1 disarankan memakai pendekatan yang sederhana dan mudah dikembangkan.
-
-Contoh stack:
-- React / Next.js
+Stack frontend v1:
+- React
+- Vite
 - TypeScript
-- lightweight state management
+- React Router
+- localStorage session sederhana
 - form validation sederhana
-- API service wrapper
+- API service wrapper berbasis `fetch`
 
 Prinsip:
 - clean
@@ -231,10 +228,59 @@ Prinsip:
 Contoh environment variable:
 
 ```env
-NEXT_PUBLIC_API_BASE_URL=https://alpardfm.my.id/api/haze
+VITE_API_BASE_URL=https://alpardfm.my.id/api/haze
 ```
 
-## 10. UX Notes
+File contoh tersedia di `.env.example`.
+
+## 10. Local Development
+
+Install dependency:
+
+```bash
+npm install
+```
+
+Jalankan development server:
+
+```bash
+npm run dev
+```
+
+Validasi project:
+
+```bash
+npm run typecheck
+npm run build
+npm audit
+```
+
+## 11. Deployment
+
+Target deploy v1:
+- URL UI: `https://alpardfm.my.id/haze/`
+- API: `https://alpardfm.my.id/api/haze`
+- VPS path: `/var/www/alpardfm.my.id/haze`
+
+Manual deploy dari local:
+
+```bash
+bash scripts/deploy-vps.sh
+```
+
+CI/CD tersedia di `.github/workflows/deploy.yml`.
+
+GitHub secret yang diperlukan:
+
+```text
+VPS_SSH_KEY
+```
+
+Isi `VPS_SSH_KEY` dengan private key deploy yang punya akses SSH ke `alpardfm@103.87.67.209`.
+
+Nginx VPS memakai snippet di `deploy/nginx-haze.conf`.
+
+## 12. UX Notes
 
 Minimal state yang harus diperhatikan:
 
@@ -244,7 +290,7 @@ Minimal state yang harus diperhatikan:
 - disabled submit state saat form diproses
 - confirmation dasar saat cancel appointment
 
-## 11. Non Goals
+## 13. Non Goals
 
 Hal-hal berikut memang tidak dibangun di v1 frontend:
 
@@ -256,7 +302,7 @@ Hal-hal berikut memang tidak dibangun di v1 frontend:
 - analytics dashboard besar
 - multi admin scheduler
 
-## 12. Development Principle
+## 14. Development Principle
 
 Saat mengembangkan `haze-ui`:
 
@@ -266,7 +312,7 @@ Saat mengembangkan `haze-ui`:
 - utamakan implementasi yang sederhana, bersih, dan stabil
 - jaga agar hasil tetap mudah dibaca dan mudah dilanjutkan AI agent
 
-## 13. Summary
+## 15. Summary
 
 `haze-ui` adalah frontend untuk sistem jadwal admin + reminder yang fokus pada dua hal utama:
 

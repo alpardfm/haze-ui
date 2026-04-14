@@ -298,7 +298,24 @@ Tetapi jangan membuat lapisan fetch terlalu rumit untuk v1.
 
 ---
 
-## 13. Error Handling Rule
+## 13. Current Tech Rule
+
+Stack frontend saat ini:
+- React
+- Vite
+- TypeScript
+- React Router
+- localStorage session sederhana
+- API service wrapper berbasis `fetch`
+
+Environment variable API:
+- `VITE_API_BASE_URL`
+
+Jangan mengganti stack atau pola routing besar tanpa alasan project yang jelas.
+
+---
+
+## 14. Error Handling Rule
 
 Frontend harus menangani error minimal untuk:
 
@@ -317,7 +334,7 @@ Error message harus:
 
 ---
 
-## 14. Conflict Handling Rule
+## 15. Conflict Handling Rule
 
 Jika ada permintaan yang bentrok dengan pondasi v1, AI agent harus:
 
@@ -336,7 +353,7 @@ Jangan langsung menyetujui permintaan yang melanggar boundary v1.
 
 ---
 
-## 15. Output Style Rule
+## 16. Output Style Rule
 
 Semua output untuk project ini harus:
 
@@ -354,7 +371,7 @@ Jika diminta membuat code, struktur, atau dokumen:
 
 ---
 
-## 16. Final Principle
+## 17. Final Principle
 
 Prinsip utama project ini:
 
