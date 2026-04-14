@@ -129,22 +129,22 @@ Admin bisa membuat appointment baru dari UI.
 
 ### Tasks
 
-- [ ] buat halaman create appointment
-- [ ] buat form field:
-  - [ ] client_name
-  - [ ] address
-  - [ ] notes
-  - [ ] meeting_date
-  - [ ] meeting_time
-  - [ ] is_reminder_enabled
-  - [ ] reminder_start_at
-  - [ ] reminder_interval_hours
-- [ ] buat validasi field dasar
-- [ ] handle loading submit state
-- [ ] integrasikan ke `POST /appointments`
-- [ ] tampilkan error response jika create gagal
-- [ ] redirect / refresh list setelah create sukses
-- [ ] tambahkan UX untuk reminder enabled / disabled
+- [x] buat halaman create appointment
+- [x] buat form field:
+  - [x] client_name
+  - [x] address
+  - [x] notes
+  - [x] meeting_date
+  - [x] meeting_time
+  - [x] is_reminder_enabled
+  - [x] reminder_start_at
+  - [x] reminder_interval_hours
+- [x] buat validasi field dasar
+- [x] handle loading submit state
+- [x] integrasikan ke `POST /appointments`
+- [x] tampilkan error response jika create gagal
+- [x] redirect / refresh list setelah create sukses
+- [x] tambahkan UX untuk reminder enabled / disabled
 
 ### Output
 

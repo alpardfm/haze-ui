@@ -117,6 +117,10 @@ select {
   max-width: 560px;
 }
 
+.form-shell--wide {
+  max-width: 760px;
+}
+
 .form-shell p {
   margin: 0;
 }
@@ -124,6 +128,12 @@ select {
 .form-field {
   display: grid;
   gap: 8px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .form-field label {
@@ -171,6 +181,24 @@ textarea.field-control {
   padding: 12px;
   color: #7a271a;
   background: #fff1f0;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #25352d;
+  font-weight: 700;
+}
+
+.checkbox-field input {
+  width: 18px;
+  height: 18px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .button {
@@ -367,6 +395,10 @@ textarea.field-control {
   }
 
   .filter-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
     grid-template-columns: 1fr;
   }
 }
