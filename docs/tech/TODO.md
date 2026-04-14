@@ -232,16 +232,16 @@ Public/client bisa mengecek jadwal terisi berdasarkan tanggal.
 
 ### Tasks
 
-- [ ] buat halaman public checker
-- [ ] buat input tanggal
-- [ ] integrasikan ke `GET /public/schedules?date=YYYY-MM-DD`
-- [ ] tampilkan daftar rentang waktu terisi
-- [ ] tampilkan status `occupied`
-- [ ] tambahkan loading state
-- [ ] tambahkan empty state:
-  - [ ] `Belum ada jadwal tercatat pada tanggal ini`
-- [ ] tambahkan error state
-- [ ] pastikan tidak ada data sensitif yang tampil
+- [x] buat halaman public checker
+- [x] buat input tanggal
+- [x] integrasikan ke `GET /public/schedules?date=YYYY-MM-DD`
+- [x] tampilkan daftar rentang waktu terisi
+- [x] tampilkan status `occupied`
+- [x] tambahkan loading state
+- [x] tambahkan empty state:
+  - [x] `Belum ada jadwal tercatat pada tanggal ini`
+- [x] tambahkan error state
+- [x] pastikan tidak ada data sensitif yang tampil
 
 ### Output
 
