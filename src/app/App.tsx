@@ -5,6 +5,7 @@ import { AppShell } from "../components/layout/AppShell";
 import { PublicLayout } from "../components/layout/PublicLayout";
 import { AppointmentComingSoonPage } from "../pages/appointments/AppointmentComingSoonPage";
 import { AppointmentCreatePage } from "../pages/appointments/AppointmentCreatePage";
+import { AppointmentDetailPage } from "../pages/appointments/AppointmentDetailPage";
 import { AppointmentsPage } from "../pages/appointments/AppointmentsPage";
 import { LoginPage } from "../pages/login/LoginPage";
 import { PublicSchedulePage } from "../pages/public-schedule/PublicSchedulePage";
@@ -24,12 +25,7 @@ export function App() {
             />
             <Route
               path="/appointments/:id"
-              element={
-                <AppointmentComingSoonPage
-                  title="Detail appointment dibangun di Phase 5"
-                  description="Dashboard sudah menyiapkan jalur ke halaman detail."
-                />
-              }
+              element={<AppointmentDetailPage />}
             />
             <Route
               path="/appointments/:id/edit"

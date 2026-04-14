@@ -160,16 +160,16 @@ Admin bisa melihat detail appointment.
 
 ### Tasks
 
-- [ ] buat halaman detail appointment
-- [ ] integrasikan ke `GET /appointments/:id`
-- [ ] tampilkan data utama appointment
-- [ ] tampilkan start_at dan end_at
-- [ ] tampilkan status
-- [ ] tampilkan reminder config
-- [ ] tampilkan loading state
-- [ ] tampilkan error state
-- [ ] sediakan shortcut ke edit
-- [ ] sediakan shortcut ke cancel jika diperlukan
+- [x] buat halaman detail appointment
+- [x] integrasikan ke `GET /appointments/:id`
+- [x] tampilkan data utama appointment
+- [x] tampilkan start_at dan end_at
+- [x] tampilkan status
+- [x] tampilkan reminder config
+- [x] tampilkan loading state
+- [x] tampilkan error state
+- [x] sediakan shortcut ke edit
+- [x] sediakan shortcut ke cancel jika diperlukan
 
 ### Output
 
