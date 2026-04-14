@@ -102,17 +102,17 @@ Admin bisa melihat daftar appointment.
 
 ### Tasks
 
-- [ ] buat halaman dashboard / appointments list
-- [ ] integrasikan ke `GET /appointments`
-- [ ] tampilkan list appointment
-- [ ] tampilkan status badge
-- [ ] tambahkan filter tanggal
-- [ ] tambahkan filter status
-- [ ] tambahkan loading state
-- [ ] tambahkan empty state
-- [ ] tambahkan error state
-- [ ] tambahkan tombol ke create page
-- [ ] tambahkan aksi ke detail / edit / cancel
+- [x] buat halaman dashboard / appointments list
+- [x] integrasikan ke `GET /appointments`
+- [x] tampilkan list appointment
+- [x] tampilkan status badge
+- [x] tambahkan filter tanggal
+- [x] tambahkan filter status
+- [x] tambahkan loading state
+- [x] tambahkan empty state
+- [x] tambahkan error state
+- [x] tambahkan tombol ke create page
+- [x] tambahkan aksi ke detail / edit / cancel
 
 ### Output
 
