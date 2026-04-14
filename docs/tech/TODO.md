@@ -49,17 +49,17 @@ Menyiapkan komponen dasar yang dipakai lintas halaman.
 
 ### Tasks
 
-- [ ] buat layout dasar admin area
-- [ ] buat layout dasar public area
-- [ ] buat komponen input dasar
-- [ ] buat komponen button dasar
-- [ ] buat komponen textarea dasar
-- [ ] buat komponen select / date input / time input
-- [ ] buat komponen loading state
-- [ ] buat komponen empty state
-- [ ] buat komponen error state
-- [ ] buat komponen status badge
-- [ ] buat helper format tanggal dan jam
+- [x] buat layout dasar admin area
+- [x] buat layout dasar public area
+- [x] buat komponen input dasar
+- [x] buat komponen button dasar
+- [x] buat komponen textarea dasar
+- [x] buat komponen select / date input / time input
+- [x] buat komponen loading state
+- [x] buat komponen empty state
+- [x] buat komponen error state
+- [x] buat komponen status badge
+- [x] buat helper format tanggal dan jam
 
 ### Output
 
